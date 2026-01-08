@@ -138,6 +138,7 @@
   font-size: 22rpx;
   color: #6f625d;
   line-height: 1.7;
+  display: block;
 }
 
 .promo {
@@ -251,12 +252,13 @@
 }
 
 .admin-button {
-  align-self: flex-start;
+  align-self: center;
+  text-align: center;
   padding: 12rpx 32rpx;
   border-radius: 999rpx;
-  background: #2f2a27;
-  color: #fffaf6;
-  font-size: 24rpx;
+  background: transparent;
+  color: #00000033;
+  font-size: 20rpx;
 }
 
 @media (min-width: 600px) {

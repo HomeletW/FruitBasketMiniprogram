@@ -73,14 +73,6 @@
   </view>
 
   <view class="section fade-in admin-section" style="animation-delay: 0.4s;">
-    <view class="section-head">
-      <text class="section-title">管理者入口</text>
-      <text class="section-subtitle">仅限内部人员使用</text>
-    </view>
-    <view class="admin-card card">
-      <text class="admin-title">管理员面板</text>
-      <text class="admin-desc">滑动到页面底部后，可在此进入管理端查看订单与内容。</text>
-      <view class="admin-button" bindtap="goAdminLogin">进入管理面板</view>
-    </view>
+    <view class="admin-button" bindtap="goAdminLogin">进入管理面板</view>
   </view>
 </view>

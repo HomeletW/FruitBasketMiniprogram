@@ -76,6 +76,11 @@ Page({
       url: "/pages/admin-login/index"
     });
   },
+  goOrder() {
+    wx.navigateTo({
+      url: "pages/orders/index"
+    });
+  },
   handleLoadMore() {
     if (!this.data.hasMore || this.data.isLoadingMore) {
       return;
