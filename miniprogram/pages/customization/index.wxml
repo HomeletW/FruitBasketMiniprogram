@@ -1,17 +1,29 @@
-<view class="container">
-  <view class="section">
-    <view class="title">Customize your basket</view>
-    <input class="input" placeholder="Basket name" data-field="basketName" bindinput="onInput" />
-    <textarea class="textarea" placeholder="Message card" data-field="message" bindinput="onInput" />
-    <picker mode="date" bindchange="onDateChange">
-      <view class="input">Delivery date: {{deliveryDate || 'Select date'}} </view>
-    </picker>
+<view class="page">
+  <view class="section fade-in">
+    <view class="section-head">
+      <text class="section-title">定制礼盒</text>
+      <text class="section-subtitle">填写专属心意与配送信息</text>
+    </view>
+    <view class="card form-card">
+      <input class="input" placeholder="礼盒名称" data-field="basketName" bindinput="onInput" />
+      <textarea class="textarea" placeholder="写给收礼人的祝福卡片" data-field="message" bindinput="onInput" />
+      <picker mode="date" bindchange="onDateChange">
+        <view class="input picker-input">送达日期：{{deliveryDate || '请选择日期'}}</view>
+      </picker>
+    </view>
   </view>
-  <view class="section">
-    <view class="title">Delivery details</view>
-    <input class="input" placeholder="Contact name" data-field="contactName" bindinput="onInput" />
-    <input class="input" placeholder="Contact phone" data-field="contactPhone" bindinput="onInput" />
-    <textarea class="textarea" placeholder="Delivery address" data-field="address" bindinput="onInput" />
+  <view class="section fade-in" style="animation-delay: 0.1s;">
+    <view class="section-head">
+      <text class="section-title">配送信息</text>
+      <text class="section-subtitle">确保联系方式与地址准确</text>
+    </view>
+    <view class="card form-card">
+      <input class="input" placeholder="联系人姓名" data-field="contactName" bindinput="onInput" />
+      <input class="input" placeholder="联系电话" data-field="contactPhone" bindinput="onInput" />
+      <textarea class="textarea" placeholder="配送地址" data-field="address" bindinput="onInput" />
+    </view>
   </view>
-  <view class="button-primary" bindtap="submitOrder">Submit & Pay</view>
+  <view class="section fade-in" style="animation-delay: 0.2s;">
+    <view class="button-primary" bindtap="submitOrder">提交订单并支付定金</view>
+  </view>
 </view>

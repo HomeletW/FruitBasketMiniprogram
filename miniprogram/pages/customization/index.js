@@ -35,16 +35,16 @@ Page({
         wx.requestPayment({
           ...payment,
           success: () => {
-            wx.showToast({ title: 'Payment success' })
+            wx.showToast({ title: '支付成功' })
             wx.navigateTo({ url: '/pages/orders/index' })
           },
           fail: () => {
-            wx.showToast({ title: 'Payment canceled', icon: 'none' })
+            wx.showToast({ title: '支付已取消', icon: 'none' })
           }
         })
       }
     }).catch(() => {
-      wx.showToast({ title: 'Failed to create order', icon: 'none' })
+      wx.showToast({ title: '创建订单失败', icon: 'none' })
     }).finally(() => {
       this.setData({ loading: false })
     })

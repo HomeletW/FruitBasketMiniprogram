@@ -1,8 +1,8 @@
-# Publish Steps (WeChat DevTools)
+# 发布流程（微信开发者工具）
 
-1. Open WeChat DevTools and load the project root.
-2. Confirm the **AppID** and **CloudBase environment** are set.
-3. Deploy all cloud functions from `cloudfunctions/`.
-4. Run a local preview and verify order creation and admin login.
-5. Click **Upload** in DevTools to submit for review.
-6. After approval, click **Release** to publish.
+1. 打开微信开发者工具并加载项目根目录。
+2. 确认已配置 **AppID** 与 **CloudBase 环境**。
+3. 部署 `cloudfunctions/` 下的所有云函数。
+4. 本地预览并验证下单与管理员登录流程。
+5. 在开发者工具中点击 **上传** 提交审核。
+6. 审核通过后点击 **发布** 上线。

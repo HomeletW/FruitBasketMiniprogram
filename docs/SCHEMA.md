@@ -1,90 +1,90 @@
-# Database Schema
+# 数据库结构
 
-## Collections
+## 集合
 
 ### `orders`
 
-| Field | Type | Notes |
+| 字段 | 类型 | 说明 |
 | --- | --- | --- |
-| `_id` | string | Auto-generated document id. |
-| `openid` | string | WeChat user openid. |
-| `basketName` | string | Display name of the basket. |
-| `message` | string | Gift note. |
-| `deliveryDate` | string | ISO date string. |
-| `contactName` | string | Recipient name. |
-| `contactPhone` | string | Recipient phone. |
-| `address` | string | Delivery address. |
-| `amount` | number | Amount in cents. |
-| `status` | string | Order status (see lifecycle). |
-| `statusHistory` | array | Ordered status transitions. |
-| `auditLogs` | array | Audit events for user/admin actions. |
-| `payment` | object | CloudPay response payload. |
-| `paymentError` | string | Payment error message, if any. |
-| `createdAt` | string | ISO timestamp. |
-| `updatedAt` | string | ISO timestamp. |
+| `_id` | string | 自动生成的文档 ID。 |
+| `openid` | string | 微信用户 openid。 |
+| `basketName` | string | 礼盒展示名称。 |
+| `message` | string | 祝福卡片内容。 |
+| `deliveryDate` | string | ISO 日期字符串。 |
+| `contactName` | string | 收件人姓名。 |
+| `contactPhone` | string | 收件人电话。 |
+| `address` | string | 配送地址。 |
+| `amount` | number | 金额（分）。 |
+| `status` | string | 订单状态（见生命周期）。 |
+| `statusHistory` | array | 状态流转记录。 |
+| `auditLogs` | array | 用户/管理员操作审计。 |
+| `payment` | object | 云支付返回内容。 |
+| `paymentError` | string | 支付错误信息（如有）。 |
+| `createdAt` | string | ISO 时间戳。 |
+| `updatedAt` | string | ISO 时间戳。 |
 
-**Indexes**
-- Compound index on `openid` + `createdAt` for `getMyOrders`.
-- Single-field index on `createdAt` for admin listing.
+**索引**
+- `openid` + `createdAt` 复合索引（用于 `getMyOrders`）。
+- `createdAt` 单字段索引（用于管理后台列表）。
 
-**Access rules**
-- Users: read/update own orders only (by `openid`).
-- Admins: read/update all orders.
+**权限规则**
+- 用户：仅可读取/更新自己的订单（通过 `openid`）。
+- 管理员：可读取/更新所有订单。
 
 ### `admins`
 
-| Field | Type | Notes |
+| 字段 | 类型 | 说明 |
 | --- | --- | --- |
-| `username` | string | Admin username. |
-| `passwordHash` | string | SHA-256 hash. |
-| `salt` | string | Password salt. |
-| `token` | string | Active admin token. |
-| `tokenExpiresAt` | string | ISO timestamp. |
-| `auditLogs` | array | Login history. |
-| `lastLoginAt` | string | ISO timestamp. |
+| `username` | string | 管理员账号。 |
+| `passwordHash` | string | SHA-256 哈希。 |
+| `salt` | string | 密码盐值。 |
+| `token` | string | 当前管理员 token。 |
+| `tokenExpiresAt` | string | ISO 时间戳。 |
+| `auditLogs` | array | 登录审计记录。 |
+| `lastLoginAt` | string | ISO 时间戳。 |
 
-**Indexes**
-- Unique index on `username`.
-- Index on `token`.
+**索引**
+- `username` 唯一索引。
+- `token` 索引。
 
-**Access rules**
-- Admins only; deny direct client access (use cloud functions).
+**权限规则**
+- 仅管理员可访问；禁止客户端直接读取（通过云函数操作）。
 
 ### `content`
 
-| Field | Type | Notes |
+| 字段 | 类型 | 说明 |
 | --- | --- | --- |
-| `_id` | string | Content key (e.g., `landing`, `subscribe_templates`). |
-| `sections` | array | Landing highlights. |
-| `updatedAt` | string | ISO timestamp. |
-| `updatedBy` | string | Admin username. |
-| `auditLogs` | array | Content update history. |
+| `_id` | string | 内容 key（如 `landing`, `subscribe_templates`）。 |
+| `sections` | array | 首页亮点文案。 |
+| `updatedAt` | string | ISO 时间戳。 |
+| `updatedBy` | string | 管理员账号。 |
+| `auditLogs` | array | 内容更新记录。 |
 
-**Indexes**
-- Index on `_id` for fast lookups.
+**索引**
+- `_id` 索引用于快速查询。
 
-**Access rules**
-- Read: public.
-- Write: admin only.
+**权限规则**
+- 读取：公开。
+- 写入：仅管理员。
 
 ### `notify_logs` (optional)
 
-| Field | Type | Notes |
+| 字段 | 类型 | 说明 |
 | --- | --- | --- |
-| `type` | string | Notification type (order_created, order_status). |
-| `status` | string | SENT / FAILED / SKIPPED. |
-| `templateId` | string | Template id. |
-| `openid` | string | Recipient openid. |
-| `error` | string | Error message, if any. |
-| `createdAt` | string | ISO timestamp. |
+| `type` | string | 通知类型（order_created, order_status）。 |
+| `status` | string | SENT / FAILED / SKIPPED。 |
+| `templateId` | string | 模板 ID。 |
+| `openid` | string | 接收方 openid。 |
+| `error` | string | 错误信息（如有）。 |
+| `createdAt` | string | ISO 时间戳。 |
 
-**Indexes**
-- Index on `createdAt` for audits.
+**索引**
+- `createdAt` 索引用于审计。
 
-**Access rules**
-- Admin only.
+**权限规则**
+- 仅管理员可访问。
 
-## Order Lifecycle FSM
+## 订单生命周期状态机
 
 ```
 CREATED -> PAID -> FULFILLING -> COMPLETED
@@ -93,11 +93,11 @@ PAID -> CANCELED
 COMPLETED -> REFUNDED
 ```
 
-- User cancellations allowed in `CREATED` and `PAID`.
-- Admin can move through the lifecycle using `adminUpdateOrderStatus`.
+- 用户仅可在 `CREATED` 与 `PAID` 阶段取消订单。
+- 管理员可通过 `adminUpdateOrderStatus` 进行状态流转。
 
-## Audit Logging
+## 审计日志
 
-- `orders.auditLogs` capture user/admin actions.
-- `orders.statusHistory` tracks each transition with timestamp and actor.
-- `content.auditLogs` records admin content updates.
+- `orders.auditLogs` 记录用户/管理员操作。
+- `orders.statusHistory` 记录每次状态流转的时间与操作人。
+- `content.auditLogs` 记录内容更新历史。

@@ -1,29 +1,29 @@
-# Deployment Guide
+# 部署指南
 
-## Prerequisites
+## 前置条件
 
-- WeChat DevTools installed.
-- A CloudBase environment created for the mini program.
-- Cloud payment configuration (sub-mch-id) ready.
+- 已安装微信开发者工具。
+- 已创建小程序对应的 CloudBase 环境。
+- 已准备好云支付配置（子商户号 sub-mch-id）。
 
-## Steps
+## 部署步骤
 
-1. Open the project directory in WeChat DevTools.
-2. Set the CloudBase environment in the IDE.
-3. Deploy cloud functions:
-   - Right-click each function under `cloudfunctions/` and select **Deploy and Install Dependencies**.
-4. Create collections and indexes in the CloudBase database as defined in `docs/SCHEMA.md`.
-5. Insert initial documents:
-   - `content/landing` with `sections` array.
-   - `content/subscribe_templates` with template IDs.
-6. Configure CloudPay with `SUB_MCH_ID` and ensure `cloud.openapi.cloudPay.unifiedOrder` is enabled.
+1. 使用微信开发者工具打开项目目录。
+2. 在 IDE 中选择并配置 CloudBase 环境。
+3. 部署云函数：
+   - 在 `cloudfunctions/` 目录下逐个右键函数，选择 **部署并安装依赖**。
+4. 按照 `docs/SCHEMA.md` 创建 CloudBase 数据库集合与索引。
+5. 插入初始数据：
+   - `content/landing` 写入 `sections` 数组。
+   - `content/subscribe_templates` 写入模板 ID。
+6. 配置云支付 `SUB_MCH_ID`，并确保开启 `cloud.openapi.cloudPay.unifiedOrder`。
 
-## Environment Variables
+## 环境变量
 
-- `SUB_MCH_ID`: sub merchant id for payment.
+- `SUB_MCH_ID`：云支付子商户号。
 
-## Smoke Test
+## 冒烟测试
 
-- Open the mini program.
-- Submit an order and verify the order appears in `orders`.
-- Log in as admin and update the status to `FULFILLING`.
+- 打开小程序。
+- 提交订单并确认 `orders` 集合中出现记录。
+- 管理员登录后将状态更新为 `FULFILLING`。

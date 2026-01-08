@@ -1,6 +1,11 @@
 {
   "pages": [
-    "pages/landing/index"
+    "pages/landing/index",
+    "pages/customization/index",
+    "pages/orders/index",
+    "pages/order-detail/index",
+    "pages/admin-login/index",
+    "pages/admin-dashboard/index"
   ],
   "window": {
     "navigationBarTitleText": "法式花果礼盒定制",

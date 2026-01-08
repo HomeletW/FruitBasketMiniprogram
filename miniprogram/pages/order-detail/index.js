@@ -1,7 +1,14 @@
 Page({
   data: {
     order: null,
-    loading: false
+    loading: false,
+    statusMap: {
+      CREATED: '已创建',
+      PAID: '已支付',
+      FULFILLING: '制作中',
+      COMPLETED: '已完成',
+      CANCELED: '已取消'
+    }
   },
   onLoad(query) {
     this.setData({ orderId: query.id })
@@ -25,10 +32,10 @@ Page({
       name: 'cancelMyOrder',
       data: { id: this.data.orderId }
     }).then(() => {
-      wx.showToast({ title: 'Order canceled' })
+      wx.showToast({ title: '订单已取消' })
       this.fetchOrder()
     }).catch(() => {
-      wx.showToast({ title: 'Unable to cancel', icon: 'none' })
+      wx.showToast({ title: '暂无法取消订单', icon: 'none' })
     })
   }
 })

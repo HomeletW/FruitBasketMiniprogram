@@ -1,21 +1,31 @@
-<view class="container">
-  <view class="section">
-    <view class="title">Orders</view>
-    <block wx:for="{{orders}}" wx:key="_id">
-      <view class="order">
-        <view class="order-title">{{item.basketName}}</view>
-        <view class="order-meta">{{item.status}} · {{item.contactName}}</view>
-        <view class="actions">
-          <button size="mini" data-id="{{item._id}}" data-status="FULFILLING" bindtap="updateStatus">Start</button>
-          <button size="mini" data-id="{{item._id}}" data-status="COMPLETED" bindtap="updateStatus">Complete</button>
-          <button size="mini" data-id="{{item._id}}" data-status="CANCELED" bindtap="updateStatus">Cancel</button>
+<view class="page">
+  <view class="section fade-in">
+    <view class="section-head">
+      <text class="section-title">订单管理</text>
+      <text class="section-subtitle">及时更新订单状态</text>
+    </view>
+    <view class="card list-card">
+      <block wx:for="{{orders}}" wx:key="_id">
+        <view class="order">
+          <view class="order-title">{{item.basketName}}</view>
+          <view class="order-meta">{{statusMap[item.status] || item.status}} · {{item.contactName}}</view>
+          <view class="actions">
+            <button size="mini" data-id="{{item._id}}" data-status="FULFILLING" bindtap="updateStatus">开始</button>
+            <button size="mini" data-id="{{item._id}}" data-status="COMPLETED" bindtap="updateStatus">完成</button>
+            <button size="mini" data-id="{{item._id}}" data-status="CANCELED" bindtap="updateStatus">取消</button>
+          </view>
         </view>
-      </view>
-    </block>
+      </block>
+    </view>
   </view>
-  <view class="section">
-    <view class="title">Content</view>
-    <textarea class="textarea" value="{{contentValue}}" bindinput="onContentInput" />
-    <view class="button-primary" bindtap="saveContent">Save Content</view>
+  <view class="section fade-in" style="animation-delay: 0.1s;">
+    <view class="section-head">
+      <text class="section-title">内容管理</text>
+      <text class="section-subtitle">更新展示内容与宣传文案</text>
+    </view>
+    <view class="card content-card">
+      <textarea class="textarea" value="{{contentValue}}" bindinput="onContentInput" placeholder="请输入要更新的内容" />
+      <view class="button-primary" bindtap="saveContent">保存内容</view>
+    </view>
   </view>
 </view>

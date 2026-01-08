@@ -1,11 +1,16 @@
-<view class="container">
-  <view wx:if="{{order}}" class="section">
-    <view class="title">Order Detail</view>
-    <view class="row"><text class="label">Basket</text>{{order.basketName}}</view>
-    <view class="row"><text class="label">Status</text>{{order.status}}</view>
-    <view class="row"><text class="label">Delivery</text>{{order.deliveryDate}}</view>
-    <view class="row"><text class="label">Message</text>{{order.message}}</view>
-    <view class="row"><text class="label">Address</text>{{order.address}}</view>
-    <view class="button-secondary" bindtap="cancelOrder" wx:if="{{order.status === 'CREATED' || order.status === 'PAID'}}">Cancel Order</view>
+<view class="page">
+  <view wx:if="{{order}}" class="section fade-in">
+    <view class="section-head">
+      <text class="section-title">订单详情</text>
+      <text class="section-subtitle">随时查看配送与祝福信息</text>
+    </view>
+    <view class="card detail-card">
+      <view class="row"><text class="label">礼盒</text>{{order.basketName}}</view>
+      <view class="row"><text class="label">状态</text>{{statusMap[order.status] || order.status}}</view>
+      <view class="row"><text class="label">送达</text>{{order.deliveryDate}}</view>
+      <view class="row"><text class="label">祝福</text>{{order.message}}</view>
+      <view class="row"><text class="label">地址</text>{{order.address}}</view>
+      <view class="button-secondary" bindtap="cancelOrder" wx:if="{{order.status === 'CREATED' || order.status === 'PAID'}}">取消订单</view>
+    </view>
   </view>
 </view>
