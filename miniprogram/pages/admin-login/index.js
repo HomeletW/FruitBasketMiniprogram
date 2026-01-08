@@ -21,7 +21,7 @@ Page({
         wx.navigateTo({ url: '/pages/admin-dashboard/index' })
       }
     }).catch(() => {
-      wx.showToast({ title: 'Login failed', icon: 'none' })
+      wx.showToast({ title: '登录失败', icon: 'none' })
     })
   }
 })

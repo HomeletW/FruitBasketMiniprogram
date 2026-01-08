@@ -71,6 +71,11 @@ Page({
     isLoadingMore: false
   },
   onLoad() {},
+  goAdminLogin() {
+    wx.navigateTo({
+      url: "/pages/admin-login/index"
+    });
+  },
   handleLoadMore() {
     if (!this.data.hasMore || this.data.isLoadingMore) {
       return;

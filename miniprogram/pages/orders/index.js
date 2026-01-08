@@ -1,6 +1,13 @@
 Page({
   data: {
-    orders: []
+    orders: [],
+    statusMap: {
+      CREATED: '已创建',
+      PAID: '已支付',
+      FULFILLING: '制作中',
+      COMPLETED: '已完成',
+      CANCELED: '已取消'
+    }
   },
   onShow() {
     this.fetchOrders()

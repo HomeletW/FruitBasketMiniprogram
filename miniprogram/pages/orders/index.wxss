@@ -1,20 +1,23 @@
-.title {
-  font-size: 32rpx;
-  font-weight: 600;
-  margin-bottom: 16rpx;
+.list-card {
+  padding: 8rpx 28rpx;
 }
 
 .order {
-  padding: 20rpx 0;
-  border-bottom: 1rpx solid #eee;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f1e3dd;
+}
+
+.order:last-child {
+  border-bottom: none;
 }
 
 .order-title {
-  font-size: 28rpx;
-  font-weight: 500;
+  font-size: 26rpx;
+  font-weight: 600;
 }
 
 .order-meta {
-  color: #888;
-  margin-top: 6rpx;
+  color: #7a6f6a;
+  margin-top: 8rpx;
+  font-size: 22rpx;
 }

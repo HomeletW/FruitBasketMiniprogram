@@ -2,7 +2,14 @@ Page({
   data: {
     orders: [],
     contentKey: 'landing',
-    contentValue: ''
+    contentValue: '',
+    statusMap: {
+      CREATED: '已创建',
+      PAID: '已支付',
+      FULFILLING: '制作中',
+      COMPLETED: '已完成',
+      CANCELED: '已取消'
+    }
   },
   onShow() {
     this.fetchOrders()
@@ -25,10 +32,10 @@ Page({
       name: 'adminUpdateOrderStatus',
       data: { adminToken: this.getAdminToken(), id, status }
     }).then(() => {
-      wx.showToast({ title: 'Updated' })
+      wx.showToast({ title: '状态已更新' })
       this.fetchOrders()
     }).catch(() => {
-      wx.showToast({ title: 'Update failed', icon: 'none' })
+      wx.showToast({ title: '更新失败', icon: 'none' })
     })
   },
   onContentInput(e) {
@@ -51,9 +58,9 @@ Page({
         value: this.data.contentValue
       }
     }).then(() => {
-      wx.showToast({ title: 'Content updated' })
+      wx.showToast({ title: '内容已更新' })
     }).catch(() => {
-      wx.showToast({ title: 'Content update failed', icon: 'none' })
+      wx.showToast({ title: '内容更新失败', icon: 'none' })
     })
   }
 })

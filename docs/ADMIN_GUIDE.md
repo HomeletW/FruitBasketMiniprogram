@@ -1,21 +1,21 @@
-# Admin Usage Guide
+# 管理员使用指南
 
-## Login
+## 登录
 
-1. Navigate to `/pages/admin-login/index` (hidden entry).
-2. Enter the admin username/password.
-3. The admin token is stored in local storage for API calls.
+1. 进入 `/pages/admin-login/index`（隐藏入口）。
+2. 输入管理员账号与密码。
+3. 登录成功后会将管理员 token 存入本地存储，用于后续接口调用。
 
-## Order Management
+## 订单管理
 
-- Use the **Orders** section in the dashboard to update order status.
-- Valid transitions follow the FSM documented in `docs/SCHEMA.md`.
+- 在管理面板的 **订单管理** 区块更新订单状态。
+- 合法的状态流转请参考 `docs/SCHEMA.md` 中的状态机说明。
 
-## View Order Detail
+## 查看订单详情
 
-- The admin dashboard lists orders; detailed inspection can be done via `adminGetOrderDetail` in CloudBase console.
+- 管理面板仅展示订单列表，细节查看可在 CloudBase 控制台调用 `adminGetOrderDetail`。
 
-## Security Notes
+## 安全提示
 
-- Store admin credentials only in the `admins` collection.
-- Rotate admin tokens by re-login.
+- 管理员账号信息仅存放于 `admins` 集合。
+- 需要更新 token 时重新登录即可。

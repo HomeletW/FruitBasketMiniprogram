@@ -227,6 +227,38 @@
   color: #8b5c4b;
 }
 
+.admin-section {
+  padding-bottom: 10rpx;
+}
+
+.admin-card {
+  padding: 24rpx;
+  background: linear-gradient(135deg, #fff7f4, #fdf0ed);
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.admin-title {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.admin-desc {
+  font-size: 22rpx;
+  color: #6f625d;
+  line-height: 1.7;
+}
+
+.admin-button {
+  align-self: flex-start;
+  padding: 12rpx 32rpx;
+  border-radius: 999rpx;
+  background: #2f2a27;
+  color: #fffaf6;
+  font-size: 24rpx;
+}
+
 @media (min-width: 600px) {
   .intro-grid {
     grid-template-columns: 1fr 1fr;

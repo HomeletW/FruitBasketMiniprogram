@@ -1,20 +1,20 @@
-# Content Update Guide
+# 内容更新指南
 
-## Landing Highlights
+## 首页亮点文案
 
-Update the `content/landing` document using the admin dashboard or CloudBase console.
+通过管理面板或 CloudBase 控制台更新 `content/landing` 文档。
 
-Example payload:
+示例数据：
 
 ```json
 {
-  "sections": ["Seasonal fruits", "Hand-crafted baskets", "Same-day delivery"]
+  "sections": ["当季鲜果", "手工礼篮", "当日配送"]
 }
 ```
 
-## Subscribe Message Templates
+## 订阅消息模板
 
-Add template IDs to `content/subscribe_templates`:
+在 `content/subscribe_templates` 中添加模板 ID：
 
 ```json
 {
@@ -23,4 +23,4 @@ Add template IDs to `content/subscribe_templates`:
 }
 ```
 
-These template IDs are used by `createOrderAndPay` and `adminUpdateOrderStatus` to send notifications.
+`createOrderAndPay` 与 `adminUpdateOrderStatus` 会读取这些模板 ID 发送通知。

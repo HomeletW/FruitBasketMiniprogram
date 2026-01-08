@@ -1,11 +1,16 @@
-<view class="container">
-  <view class="section">
-    <view class="title">My Orders</view>
-    <block wx:for="{{orders}}" wx:key="_id">
-      <view class="order" data-id="{{item._id}}" bindtap="goDetail">
-        <view class="order-title">{{item.basketName}}</view>
-        <view class="order-meta">{{item.status}} · {{item.createdAt}}</view>
-      </view>
-    </block>
+<view class="page">
+  <view class="section fade-in">
+    <view class="section-head">
+      <text class="section-title">我的订单</text>
+      <text class="section-subtitle">查看订单进度与详情</text>
+    </view>
+    <view class="card list-card">
+      <block wx:for="{{orders}}" wx:key="_id">
+        <view class="order" data-id="{{item._id}}" bindtap="goDetail">
+          <view class="order-title">{{item.basketName}}</view>
+          <view class="order-meta">{{statusMap[item.status] || item.status}} · {{item.createdAt}}</view>
+        </view>
+      </block>
+    </view>
   </view>
 </view>

@@ -7,3 +7,88 @@ page {
 button {
   border-radius: 999px;
 }
+
+.page {
+  padding: 24rpx 24rpx 80rpx;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.section {
+  margin-top: 40rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 22rpx;
+  color: #7a6f6a;
+  margin-top: 8rpx;
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+  margin-bottom: 20rpx;
+}
+
+.fade-in {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: #f3f0ee;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #3d2b28;
+  box-sizing: border-box;
+}
+
+.textarea {
+  min-height: 120rpx;
+}
+
+.button-primary {
+  padding: 16rpx 0;
+  text-align: center;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, #f6c9b8, #f1a59a);
+  color: #3d2b28;
+  font-size: 26rpx;
+  font-weight: 600;
+  box-shadow: 0 12rpx 24rpx rgba(241, 165, 154, 0.35);
+}
+
+.button-secondary {
+  padding: 16rpx 0;
+  text-align: center;
+  border-radius: 999rpx;
+  border: 2rpx solid #e7b6a7;
+  color: #9b5a4a;
+  font-size: 26rpx;
+  font-weight: 600;
+}
