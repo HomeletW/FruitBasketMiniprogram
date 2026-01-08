@@ -1,4 +1,4 @@
-<view class="page">
+<view class="page page-with-bar">
   <view wx:if="{{order}}" class="section fade-in">
     <view class="section-head">
       <text class="section-title">订单详情</text>
@@ -14,3 +14,4 @@
     </view>
   </view>
 </view>
+<bottom-bar />

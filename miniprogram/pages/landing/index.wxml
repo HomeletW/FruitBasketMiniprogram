@@ -1,11 +1,11 @@
-<view class="page">
+<view class="page page-with-bar">
   <view class="hero card fade-in">
     <image class="hero-image" mode="aspectFill" src="{{bannerUrl}}"></image>
     <view class="hero-overlay"></view>
     <view class="hero-content">
       <text class="brand">法式花果礼盒定制</text>
       <text class="slogan">{{slogan}}</text>
-      <view class="cta">马上下单</view>
+      <view class="cta" bindtap="goOrder">立即下单</view>
     </view>
   </view>
 
@@ -76,3 +76,4 @@
     <view class="admin-button" bindtap="goAdminLogin">进入管理面板</view>
   </view>
 </view>
+<bottom-bar />

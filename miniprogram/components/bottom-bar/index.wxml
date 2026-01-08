@@ -1,0 +1,12 @@
+<view class="bottom-bar">
+  <block wx:for="{{items}}" wx:key="url">
+    <view
+      class="bottom-item {{currentUrl === item.url ? 'is-active' : ''}}"
+      data-url="{{item.url}}"
+      bindtap="handleTap"
+    >
+      <text class="bottom-label">{{item.label}}</text>
+      <text class="bottom-desc">{{item.desc}}</text>
+    </view>
+  </block>
+</view>
