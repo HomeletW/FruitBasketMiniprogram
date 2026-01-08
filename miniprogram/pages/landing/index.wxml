@@ -1,18 +1,74 @@
-<view class="container">
-  <view class="section">
-    <view class="title">Welcome to Fruit Basket</view>
-    <view class="subtitle">Craft a custom fruit basket for every occasion.</view>
-    <view class="button-primary" bindtap="goCustomize">Start Customizing</view>
+<view class="page">
+  <view class="hero card fade-in">
+    <image class="hero-image" mode="aspectFill" src="{{bannerUrl}}"></image>
+    <view class="hero-overlay"></view>
+    <view class="hero-content">
+      <text class="brand">法式花果礼盒定制</text>
+      <text class="slogan">{{slogan}}</text>
+      <view class="cta">马上下单</view>
+    </view>
   </view>
-  <view class="section">
-    <view class="title">My Orders</view>
-    <view class="subtitle">Track, update, or cancel your orders.</view>
-    <view class="button-primary" bindtap="goOrders">View Orders</view>
+
+  <view class="section fade-in" style="animation-delay: 0.1s;">
+    <text class="section-title">介绍</text>
+    <view class="intro card">
+      <text class="intro-title">用心定制每一份心意</text>
+      <text class="intro-desc">
+        我们专注法式花果礼盒定制，为客户提供高品质的节日、纪念日与商务送礼解决方案。
+      </text>
+      <view class="intro-grid">
+        <view class="intro-item">
+          <text class="intro-label">下单流程</text>
+          <text class="intro-text">1. 线上填写需求并支付定金</text>
+          <text class="intro-text">2. 我们微信联系细化定制</text>
+          <text class="intro-text">3. 方案确认后微信转账尾款</text>
+        </view>
+        <view class="intro-item">
+          <text class="intro-label">商务理念</text>
+          <text class="intro-text">用花与果表达情绪，重视仪式感与真诚。</text>
+          <text class="intro-text">每一篮都是专属于收礼人的故事。</text>
+        </view>
+      </view>
+    </view>
   </view>
-  <view class="section">
-    <view class="title">Highlights</view>
-    <block wx:for="{{featured}}" wx:key="index">
-      <view class="highlight">{{item}}</view>
-    </block>
+
+  <view class="section fade-in" style="animation-delay: 0.2s;">
+    <view class="section-head">
+      <text class="section-title">促销活动</text>
+      <text class="section-subtitle">仅展示当前活动，内容可随时更新</text>
+    </view>
+    <view class="promo card">
+      <image class="promo-image" mode="aspectFill" src="{{promotion.imageUrl}}"></image>
+      <view class="promo-content">
+        <text class="promo-title">{{promotion.title}}</text>
+        <text class="promo-desc">{{promotion.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section fade-in" style="animation-delay: 0.3s;">
+    <view class="section-head">
+      <text class="section-title">案例精选</text>
+      <text class="section-subtitle">真实需求复刻，支持查看更多</text>
+    </view>
+    <view class="case-grid">
+      <block wx:for="{{cases}}" wx:key="id">
+        <view class="case-card card">
+          <image class="case-image" mode="aspectFill" src="{{item.imageUrl}}"></image>
+          <view class="case-body">
+            <text class="case-title">{{item.title}}</text>
+            <text class="case-desc">{{item.desc}}</text>
+            <view class="case-tags">
+              <block wx:for="{{item.tags}}" wx:key="*this">
+                <text class="case-tag">{{item}}</text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="load-more" bindtap="handleLoadMore">
+      <text>{{hasMore ? (isLoadingMore ? "正在加载" : "加载更多案例") : "已展示全部案例"}}</text>
+    </view>
   </view>
 </view>
