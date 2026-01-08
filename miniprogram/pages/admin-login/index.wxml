@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="section">
+    <view class="title">Admin Login</view>
+    <input class="input" placeholder="Username" data-field="username" bindinput="onInput" />
+    <input class="input" type="password" placeholder="Password" data-field="password" bindinput="onInput" />
+    <view class="button-primary" bindtap="login">Login</view>
+  </view>
+</view>

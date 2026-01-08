@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="section">
+    <view class="title">Welcome to Fruit Basket</view>
+    <view class="subtitle">Craft a custom fruit basket for every occasion.</view>
+    <view class="button-primary" bindtap="goCustomize">Start Customizing</view>
+  </view>
+  <view class="section">
+    <view class="title">My Orders</view>
+    <view class="subtitle">Track, update, or cancel your orders.</view>
+    <view class="button-primary" bindtap="goOrders">View Orders</view>
+  </view>
+  <view class="section">
+    <view class="title">Highlights</view>
+    <block wx:for="{{featured}}" wx:key="index">
+      <view class="highlight">{{item}}</view>
+    </block>
+  </view>
+</view>

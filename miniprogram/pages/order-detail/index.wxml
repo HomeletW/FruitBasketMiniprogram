@@ -1,0 +1,11 @@
+<view class="container">
+  <view wx:if="{{order}}" class="section">
+    <view class="title">Order Detail</view>
+    <view class="row"><text class="label">Basket</text>{{order.basketName}}</view>
+    <view class="row"><text class="label">Status</text>{{order.status}}</view>
+    <view class="row"><text class="label">Delivery</text>{{order.deliveryDate}}</view>
+    <view class="row"><text class="label">Message</text>{{order.message}}</view>
+    <view class="row"><text class="label">Address</text>{{order.address}}</view>
+    <view class="button-secondary" bindtap="cancelOrder" wx:if="{{order.status === 'CREATED' || order.status === 'PAID'}}">Cancel Order</view>
+  </view>
+</view>

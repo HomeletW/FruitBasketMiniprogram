@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="section">
+    <view class="title">Orders</view>
+    <block wx:for="{{orders}}" wx:key="_id">
+      <view class="order">
+        <view class="order-title">{{item.basketName}}</view>
+        <view class="order-meta">{{item.status}} · {{item.contactName}}</view>
+        <view class="actions">
+          <button size="mini" data-id="{{item._id}}" data-status="FULFILLING" bindtap="updateStatus">Start</button>
+          <button size="mini" data-id="{{item._id}}" data-status="COMPLETED" bindtap="updateStatus">Complete</button>
+          <button size="mini" data-id="{{item._id}}" data-status="CANCELED" bindtap="updateStatus">Cancel</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="section">
+    <view class="title">Content</view>
+    <textarea class="textarea" value="{{contentValue}}" bindinput="onContentInput" />
+    <view class="button-primary" bindtap="saveContent">Save Content</view>
+  </view>
+</view>

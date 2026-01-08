@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/landing/index",
+    "pages/customization/index",
+    "pages/orders/index",
+    "pages/order-detail/index",
+    "pages/admin-login/index",
+    "pages/admin-dashboard/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "Fruit Basket",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

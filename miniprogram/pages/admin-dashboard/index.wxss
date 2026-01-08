@@ -1,0 +1,32 @@
+.title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.order {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.order-title {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.order-meta {
+  color: #888;
+  margin-bottom: 12rpx;
+}
+
+.actions button {
+  margin-right: 12rpx;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 200rpx;
+  background: #f3f3f3;
+  padding: 16rpx;
+  border-radius: 8rpx;
+}
