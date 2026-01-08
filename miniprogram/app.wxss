@@ -12,6 +12,10 @@ button {
   padding: 24rpx 24rpx 80rpx;
 }
 
+.page-with-bar {
+  padding-bottom: 180rpx;
+}
+
 .card {
   background: #ffffff;
   border-radius: 24rpx;

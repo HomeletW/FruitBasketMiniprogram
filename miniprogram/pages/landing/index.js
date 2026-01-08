@@ -78,7 +78,7 @@ Page({
   },
   goOrder() {
     wx.navigateTo({
-      url: "pages/orders/index"
+      url: "/pages/orders/index"
     });
   },
   handleLoadMore() {

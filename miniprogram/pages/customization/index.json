@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "礼盒定制"
+  "navigationBarTitleText": "礼盒定制",
+  "usingComponents": {
+    "bottom-bar": "/components/bottom-bar/index"
+  }
 }

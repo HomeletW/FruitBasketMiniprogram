@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "法式花果礼盒定制",
-  "usingComponents": {}
+  "usingComponents": {
+    "bottom-bar": "/components/bottom-bar/index"
+  }
 }
