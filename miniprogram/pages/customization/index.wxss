@@ -1,0 +1,17 @@
+.title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.input,
+.textarea {
+  background: #f3f3f3;
+  border-radius: 8rpx;
+  padding: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.textarea {
+  min-height: 120rpx;
+}

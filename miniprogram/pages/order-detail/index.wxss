@@ -1,0 +1,25 @@
+.title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+}
+
+.row {
+  margin-bottom: 12rpx;
+  color: #555;
+}
+
+.label {
+  display: inline-block;
+  width: 140rpx;
+  color: #888;
+}
+
+.button-secondary {
+  margin-top: 20rpx;
+  padding: 20rpx 0;
+  text-align: center;
+  border-radius: 8rpx;
+  border: 2rpx solid #e67e22;
+  color: #e67e22;
+}

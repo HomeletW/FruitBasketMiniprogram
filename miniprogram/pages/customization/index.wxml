@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="section">
+    <view class="title">Customize your basket</view>
+    <input class="input" placeholder="Basket name" data-field="basketName" bindinput="onInput" />
+    <textarea class="textarea" placeholder="Message card" data-field="message" bindinput="onInput" />
+    <picker mode="date" bindchange="onDateChange">
+      <view class="input">Delivery date: {{deliveryDate || 'Select date'}} </view>
+    </picker>
+  </view>
+  <view class="section">
+    <view class="title">Delivery details</view>
+    <input class="input" placeholder="Contact name" data-field="contactName" bindinput="onInput" />
+    <input class="input" placeholder="Contact phone" data-field="contactPhone" bindinput="onInput" />
+    <textarea class="textarea" placeholder="Delivery address" data-field="address" bindinput="onInput" />
+  </view>
+  <view class="button-primary" bindtap="submitOrder">Submit & Pay</view>
+</view>
